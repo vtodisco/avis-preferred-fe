@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link href="../css/icons-definition.css" rel="stylesheet">
+</head>
+<script src="../js/angular.min.js"></script>
+<script src="../js/MainController.js"></script>
+<script src="../js/MainService.js"></script>
+<script src="../js/configuration.js"></script>
+<script src="../js/q.js"></script>
+<body>
+
+  <div ng-app="myApp" ng-controller="MainController" class="container-fluid">
+    <div class="jumbotron">
+      <h1><strong>Avis Preferred Priority Service</strong></h1>
+      <p class="text-center">
+        <a href="#" ng-click="api.truncate($event)" class="btn btn-lg btn-success">Svuota lista</a>
+        <a href="#" ng-click="api.deleteOldBookings($event)" class="btn btn-lg btn-success">Cancella prenotazioni scadute</a>
+      </p>
+    </div>
+    <div ng-show="validation.completed" class="row">
+      <div class="col-md-12">
+        <h4 class="alert {{validation.cssClass}} text-center">
+          <p ng-bind="messages.common[validation.message_key]"></p>
+        </h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <form name="addBookingForm" ng-submit="api.submitForm()" class="container-fluid">
+          <input id="bookingId" type="hidden" class="form-control" ng-model="model.booking.bookingId">
+          <input id="bookingDate" type="hidden" class="form-control" ng-model="model.booking.bookingDate">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label" for="bookingHour">Ore</label>
+              <select id="bookingHour" required class="form-control" ng-model="model.booking.bookingHour" ng-change="api.manageTime()">
+                <option value="">Selezionare ora</option>
+                <option value="00">00</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+              </select>
+            </div>
+            <div class="form.group col-md-6">
+              <label class="control-label" for="bookingMin">Minuti</label>
+              <select id="bookingMin" required class="form-control" ng-model="model.booking.bookingMin" ng-change="api.manageTime()">
+                <option value="">Selezionare minuti</option>
+                <option value="00">00</option>
+                <option value="30">30</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="bookingTime">Orario</label>
+              <input id="bookingTime" type="text" class="form-control" ng-model="model.booking.bookingTime" value="model.booking.bookingTime">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="slot">Slot</label>
+              <input id="slot" required name="slot" type="text" class="form-control" ng-model="model.booking.slot">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label for="fullname">Nominativo</label>
+              <input id="fullname" required type="text" class="form-control" ng-model="model.booking.fullname">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="submit" value="salva" class="btn btn-primary pull-right" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <table class="table table-striped table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Time</th>
+              <th>Name</th>
+              <th>Bay number</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="booking in model.bookings">
+              <td>{{booking.bookingId}}</td>
+              <td>{{booking.bookingTime}}</td>
+              <td>{{booking.fullname}}</td>
+              <td>{{booking.slot}}</td>
+              <td>
+                <a href="javascript:void(0)" ng-click="api.getBooking(booking.bookingId)" class="btn btn-small btn-primary"><i class="material-icons">edit</i></a>
+                <a href="javascript:void(0)" ng-click="api.deleteBooking(booking.bookingId)" class="btn btn-small btn-danger"><i class="material-icons">delete</i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+<script>
+var context = "booking-mgr";
+</script>
+
+</body>
+</html>

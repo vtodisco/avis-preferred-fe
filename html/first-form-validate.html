@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <link href="../css/icons-definition.css" rel="stylesheet">
+</head>
+<script src="../js/angular.min.js"></script>
+<script src="../js/FormValidateController.js"></script>
+<body>
+  Two-way binding
+  <div ng-app="formValidateApp" ng-controller="FormValidateController">
+    <form name="firstForm" ng-submit="api.hello($event)">
+      <input type="text" ng-model="model.nome" required custom-validator/>
+      <input type="text" ng-model="model.cognome" required custom-validator/>
+      <input type="number" ng-model="model.eta" required custom-validator/>
+      <input type="submit" value="conferma"/>
+    </form>
+  </div>
+</body>
+</html>

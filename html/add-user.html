@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <link href="../css/icons-definition.css" rel="stylesheet">
+</head>
+<script src="../js/angular.min.js"></script>
+<script src="../js/CreateSchemaController.js"></script>
+<script src="../js/CreateSchemaService.js"></script>
+<body>
+  Angular-Node wrap-up
+  <div ng-app="createSchemaApp" ng-controller="CreateSchemaController">
+      <div>
+        <form name="addUserForm" ng-submit="api.addUser()">
+          <label for="userId">ID</label>
+          <input id="userId" name="userId" type="text" ng-model="model.user.userId" required/>
+          <br />
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" ng-model="model.user.nome" required/>
+          <br />
+          <label for="cognome">Cognome</label>
+          <input id="cognome" name="cognome" type="text" ng-model="model.user.cognome" required/>
+          <br />
+          <label for="email">E-Mail</label>
+          <input id="email" name="email" type="text" ng-model="model.user.email" required/>
+          <br />
+          <input type="submit" value="salva" />
+        </form>
+      </div>
+      <a href="javascript:void(0)" ng-click="api.getUsers($event)">click here to get the list of users</a>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>nome</th>
+              <th>cognome</th>
+              <th>email</th>
+              <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="user in model.users">
+              <td>{{user.nome}}</td>
+              <td>{{user.cognome}}</td>
+              <td>{{user.email}}</td>
+              <td><a href="javascript:void(0)" ng-click="api.deleteUser(user.userId)">delete</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div ng-show="result.completed">
+        <p ng-bind="result.message">&nbsp;({{result.code}})</p>
+      </div>
+  </div>
+</body>
+</html>

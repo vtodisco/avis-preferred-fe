@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <link href="../css/icons-definition.css" rel="stylesheet">
+</head>
+<script src="../js/angular.min.js"></script>
+<script src="../js/CreateSchemaController.js"></script>
+<script src="../js/CreateSchemaService.js"></script>
+<body>
+  Angular-Node wrap-up
+  <div ng-app="createSchemaApp" ng-controller="CreateSchemaController">
+      <a href="javascript:void(0)" ng-click="api.getUsers($event)">click here to get the list of users</a>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>nome</th>
+              <th>cognome</th>
+              <th>email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="user in model.users">
+              <td>{{user.nome}}</td>
+              <td>{{user.cognome}}</td>
+              <td>{{user.email}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div ng-show="result.completed">
+        <p ng-bind="result.message">&nbsp;({{result.code}})</p>
+      </div>
+  </div>
+</body>
+</html>

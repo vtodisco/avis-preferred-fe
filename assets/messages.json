@@ -1,0 +1,6 @@
+{
+  "common": {
+    "success": "Operazione riuscita",
+    "error": "Operazione non riuscita"
+  }
+}

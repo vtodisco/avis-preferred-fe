@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <link href="../css/icons-definition.css" rel="stylesheet">
+</head>
+<script src="../js/angular.min.js"></script>
+<script src="../js/CreateSchemaController.js"></script>
+<script src="../js/CreateSchemaService.js"></script>
+<body>
+  Angular-Node wrap-up
+  <div ng-app="createSchemaApp" ng-controller="CreateSchemaController">
+      <a href="javascript:void(0)" ng-click="api.createSchema($event)">click here to create DB schema</a>
+      <div ng-show="result.completed">
+        <p ng-bind="result.message">&nbsp;({{result.code}})</p>
+      </div>
+  </div>
+</body>
+</html>

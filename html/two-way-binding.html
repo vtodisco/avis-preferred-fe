@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <link href="../css/icons-definition.css" rel="stylesheet">
+</head>
+<script src="../js/angular.min.js"></script>
+<script src="../js/FirstController.js"></script>
+<body>
+  Two-way binding
+  <div ng-app="firstApp" ng-controller="FirstController">
+    <input type="text" ng-model="model.nome" />
+    <p ng-bind="model.nome">
+    </p>
+  </div>
+
+</body>
+</html>

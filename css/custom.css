@@ -1,0 +1,147 @@
+.avis-container {
+  color: #FFF;
+  font-family: Helvetica;
+}
+
+.avis-title {
+  font-size: 38pt;
+}
+
+.avis-subtitle {
+  font-size: 30pt;
+}
+
+.avis-cell-header {
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+.avis-cell-content {
+  font-size: 40pt;
+}
+
+.avis-main-table {
+  color: #FFF;
+  font-family: Helvetica;
+}
+
+.avis-table-cell {
+  font-family: Helvetica;
+}
+
+.avis-main-table-container {
+  min-height: 600px;
+}
+
+.avis-poweredby {
+  font-family: Helvetica;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+
+.avis-bottom-logo {
+  width: 300px;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+
+.avis-date {
+  font-family: Helvetica;
+  font-size: 20pt;
+}
+
+/* Desktops and laptops ----------- */
+/*
+@media only screen  and (min-width : 1024px) {
+  .avis-title {
+    font-size: 38pt;
+  }
+
+  .avis-subtitle {
+    font-size: 30pt;
+  }
+
+  .avis-cell-header {
+    font-size: 20pt;
+    font-weight: bold;
+  }
+
+  .avis-cell-content {
+    font-size: 40pt;
+  }
+}
+*/
+/* Smartphones (landscape) ----------- */
+/*
+@media only screen and (min-width : 321px) and (max-width : 480px){
+  .avis-title {
+    font-size: 1.8em;
+  }
+
+  .avis-subtitle {
+    font-size: 1.5em;
+  }
+
+  .avis-cell-header {
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  .avis-cell-content {
+    font-size: 1.1em;
+  }
+  .avis-date {
+    font-family: Helvetica;
+    font-size: 1em;
+  }
+  .avis-bottom-logo {
+    width: 300px;
+    position: fixed;
+    bottom: 20px;
+    right: 0px;
+  }
+}
+*/
+/* Smartphones (portrait) ----------- */
+/*
+@media only screen and (max-width : 320px) {
+  .avis-title {
+    font-size: 1.8em;
+  }
+
+  .avis-subtitle {
+    font-size: 1.5em;
+  }
+
+  .avis-cell-header {
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  .avis-cell-content {
+    font-size: 1.1em;
+  }
+  .avis-date {
+    font-family: Helvetica;
+    font-size: 1em;
+  }
+  .avis-bottom-logo {
+    width: 300px;
+    position: fixed;
+    bottom: 20px;
+    right: 0px;
+  }
+}
+*/
+/* iPads (landscape) ----------- */
+/*
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+}
+*/
+/* iPads (portrait) ----------- */
+/*
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+}
+*/

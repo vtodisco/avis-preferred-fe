@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link href="../css/icons-definition.css" rel="stylesheet">
+  <link href="../css/custom.css" rel="stylesheet">
+</head>
+<script src="../js/angular.min.js"></script>
+<script src="../js/MainController.js"></script>
+<script src="../js/MainService.js"></script>
+<script src="../js/configuration.js"></script>
+<script src="../js/q.js"></script>
+<body class="avis-container" background="../img/bgimg.jpg" scroll="no">
+
+  <div ng-app="myApp" ng-controller="MainController as vm" ng-init="context='index'" class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <p><h3 class="avis-title">YOUR CAR IS WAITING</h3></p>
+        <p><h3 class="avis-subtitle">Avis Preferred Priority Service</h3></p>
+      </div>
+      <div class="col-md-">
+        <h4 class="avis-date" ng-bind="currentDate">{{currentDate}}</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="avis-main-table-container">
+          <table class="table avis-main-table">
+            <thead>
+              <tr>
+                <th class="avis-table-cell avis-cell-header">Name</th>
+                <th class="avis-table-cell avis-cell-header">&nbsp;</th>
+                <th class="avis-table-cell avis-cell-header">Bay number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="booking in model.bookings">
+                <td class="avis-table-cell avis-cell-content">{{booking.bookingTime}}</td>
+                <td class="avis-table-cell avis-cell-content">{{booking.fullname}}</td>
+                <td class="avis-table-cell avis-cell-content">{{booking.slot}}</td>
+              </tr>
+              <tr>
+                  <td colspan="3">
+                      Showing from {{((paging.current-1)*paging.delta)+1}} to {{((paging.current-1)*paging.delta)+paging.delta}} of {{paging.total}} ({{paging.pages}} pages)
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <span class="avis-poweredby pull-left"><strong>Powered by: INFOSERVICE Roma</strong></span>
+      </div>
+      <div class="col-md-10">
+        <img class="avis-bottom-logo pull-right" src="../img/Avis_Preferred_logo.jpg" />
+      </div>
+    </div>
+<script>
+var context = "index";
+</script>
+</body>
+</html>

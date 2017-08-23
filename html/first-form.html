@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <link href="../css/icons-definition.css" rel="stylesheet">
+</head>
+<script src="../js/angular.min.js"></script>
+<script src="../js/FormController.js"></script>
+<body>
+  Two-way binding
+  <div ng-app="formApp" ng-controller="FormController">
+    <form name="firstForm" ng-submit="api.hello($event)">
+      <input type="text" ng-model="model.nome" required/>
+      <input type="text" ng-model="model.cognome" required/>
+      <input type="submit" value="conferma"/>
+    </form>
+  </div>
+</body>
+</html>
